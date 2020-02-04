@@ -25,9 +25,7 @@ import java.util.Set;
 @Service
 public class ShopCategoryServiceImpl implements ShopCategoryService {
 
-    private JedisUtil.Strings jedisStrings;
 
-    private JedisUtil.Keys jedisKeys;
     @Autowired
     private ShopCategoryMapper shopCategoryMapper;
 
@@ -39,21 +37,15 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
         String key = SCLISTKEY;
         List<ShopCategory> shopCategoryList = null;
         ObjectMapper mapper = new ObjectMapper();
-        if (!jedisKeys.exists(key)) {
+
             ShopCategory shopCategoryCondition = new ShopCategory();
             // 当shopCategoryId不为空的时候，查询的条件会变为 where parent_id is null
             shopCategoryCondition.setShopCategoryId(-1L);
             shopCategoryList = shopCategoryMapper
                     .queryShopCategory(shopCategoryCondition);
             String jsonString = mapper.writeValueAsString(shopCategoryList);
-            jedisStrings.set(key, jsonString);
-        } else {
-            String jsonString = jedisStrings.get(key);
-            JavaType javaType = mapper.getTypeFactory()
-                    .constructParametricType(ArrayList.class,
-                            ShopCategory.class);
-            shopCategoryList = mapper.readValue(jsonString, javaType);
-        }
+
+
         return shopCategoryList;
     }
 
@@ -63,20 +55,14 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
         String key = SCLISTKEY + "_" + parentId;
         List<ShopCategory> shopCategoryList = null;
         ObjectMapper mapper = new ObjectMapper();
-        if (!jedisKeys.exists(key)) {
+
             ShopCategory shopCategoryCondition = new ShopCategory();
             shopCategoryCondition.setParentId(parentId);
             shopCategoryList = shopCategoryMapper
                     .queryShopCategory(shopCategoryCondition);
             String jsonString = mapper.writeValueAsString(shopCategoryList);
-            jedisStrings.set(key, jsonString);
-        } else {
-            String jsonString = jedisStrings.get(key);
-            JavaType javaType = mapper.getTypeFactory()
-                    .constructParametricType(ArrayList.class,
-                            ShopCategory.class);
-            shopCategoryList = mapper.readValue(jsonString, javaType);
-        }
+
+
         return shopCategoryList;
     }
 
@@ -86,20 +72,13 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
         String key = SCLISTKEY + "ALLSECOND";
         List<ShopCategory> shopCategoryList = null;
         ObjectMapper mapper = new ObjectMapper();
-        if (!jedisKeys.exists(key)) {
+
             ShopCategory shopCategoryCondition = new ShopCategory();
             // 当shopCategoryDesc不为空的时候，查询的条件会变为 where parent_id is not null
             shopCategoryCondition.setShopCategoryDesc("ALLSECOND");
             shopCategoryList = shopCategoryMapper.queryShopCategory(shopCategoryCondition);
             String jsonString = mapper.writeValueAsString(shopCategoryList);
-            jedisStrings.set(key, jsonString);
-        } else {
-            String jsonString = jedisStrings.get(key);
-            JavaType javaType = mapper.getTypeFactory()
-                    .constructParametricType(ArrayList.class,
-                            ShopCategory.class);
-            shopCategoryList = mapper.readValue(jsonString, javaType);
-        }
+
         return shopCategoryList;
     }
 
@@ -142,10 +121,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
                         .insertShopCategory(shopCategory);
                 if (effectedNum > 0) {
                     String prefix = SCLISTKEY;
-                    Set<String> keySet = jedisKeys.keys(prefix + "*");
-                    for (String key : keySet) {
-                        jedisKeys.del(key);
-                    }
+
                     return new ShopCategoryExecution(
                             ShopCategoryStateEnum.SUCCESS, shopCategory);
                 } else {
@@ -180,10 +156,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
                         .updateShopCategory(shopCategory);
                 if (effectedNum > 0) {
                     String prefix = SCLISTKEY;
-                    Set<String> keySet = jedisKeys.keys(prefix + "*");
-                    for (String key : keySet) {
-                        jedisKeys.del(key);
-                    }
+
                     return new ShopCategoryExecution(
                             ShopCategoryStateEnum.SUCCESS, shopCategory);
                 } else {
@@ -212,10 +185,6 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
                         .deleteShopCategory(shopCategoryId);
                 if (effectedNum > 0) {
                     String prefix = SCLISTKEY;
-                    Set<String> keySet = jedisKeys.keys(prefix + "*");
-                    for (String key : keySet) {
-                        jedisKeys.del(key);
-                    }
                     return new ShopCategoryExecution(
                             ShopCategoryStateEnum.SUCCESS);
                 } else {
@@ -247,10 +216,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
                         .batchDeleteShopCategory(shopCategoryIdList);
                 if (effectedNum > 0) {
                     String prefix = SCLISTKEY;
-                    Set<String> keySet = jedisKeys.keys(prefix + "*");
-                    for (String key : keySet) {
-                        jedisKeys.del(key);
-                    }
+
                     return new ShopCategoryExecution(
                             ShopCategoryStateEnum.SUCCESS);
                 } else {
