@@ -5,7 +5,7 @@ import ch.qos.logback.core.util.FileUtil;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.o2o.shop.bean.ShopCategory;
-import com.o2o.shop.cache.JedisUtil;
+
 import com.o2o.shop.dto.ShopCategoryExecution;
 import com.o2o.shop.enums.ShopCategoryStateEnum;
 import com.o2o.shop.mapper.ShopCategoryMapper;
