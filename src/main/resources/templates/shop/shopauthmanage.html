@@ -10,7 +10,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
         <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-        <link rel="stylesheet" href="../resources/css/shop/shopauthmanage.css">
+        <link rel="stylesheet" th:href="@{/css/shop/shopauthmanage.css}">
     </head>
 <body>
     <header class="bar bar-nav">
@@ -37,7 +37,7 @@
         <div class="content-block">
             <div class="row">
                 <div class="col-100">
-                    <a href="/myo2o/shop/shopmanage" class="button button-big button-fill button-danger">返回</a>
+                    <a th:href="@{/shop/shopmanage}" class="button button-big button-fill button-danger">返回</a>
                 </div>
             </div>
         </div>
@@ -48,6 +48,6 @@
     <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='../resources/js/shop/shopauthmanage.js' charset='utf-8'></script>
+    <script type='text/javascript' th:src='@{/js/shop/shopauthmanage.js}' charset='utf-8'></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 <link rel="stylesheet"
-	href="../resources/css/shop/awarddelivercheck.css">
+	th:href="@{/css/shop/awarddelivercheck.css}">
 </head>
 <body>
 	<header class="bar bar-nav">
@@ -49,7 +49,7 @@
 		<div class="content-block">
 			<div class="row">
 				<div class="col-100">
-					<a href="/myo2o/shop/shopmanage"
+					<a th:href="@{/shop/shopmanage}"
 						class="button button-big button-fill button-danger">返回</a>
 				</div>
 			</div>
@@ -65,8 +65,8 @@
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/common/commonutil.js' charset='utf-8'></script>
+		th:src='@{/js/common/commonutil.js}' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/shop/awarddelivercheck.js' charset='utf-8'></script>
+		th:src='@{/js/shop/awarddelivercheck.js}' charset='utf-8'></script>
 </body>
 </html>

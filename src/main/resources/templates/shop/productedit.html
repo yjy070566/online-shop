@@ -12,7 +12,7 @@
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-<link rel="stylesheet" href="../resources/css/shop/productmanage.css">
+<link rel="stylesheet" th:href="@{/css/shop/productmanage.css}">
 </head>
 <body>
 	<header class="bar bar-nav">
@@ -139,7 +139,7 @@
 								class="form-control in" placeholder="验证码" />
 							<div class="item-input">
 								<img id="captcha_img" alt="点击更换" title="点击更换"
-									onclick="changeVerifyCode(this)" src="../Kaptcha" />
+									onclick="changeVerifyCode(this)" th:src="@{/Kaptcha}" />
 							</div>
 						</div>
 					</div>
@@ -150,7 +150,7 @@
 		<div class="content-block">
 			<div class="row">
 				<div class="col-50">
-					<a href="/myo2o/shop/productmanage"
+					<a th:href="@{/shop/productmanage}"
 						class="button button-big button-fill button-danger" id="back">返回商品管理</a>
 				</div>
 				<div class="col-50">
@@ -169,8 +169,8 @@
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/common/commonutil.js' charset='utf-8'></script>
+		th:src='@{/js/common/commonutil.js}' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/shop/productedit.js' charset='utf-8'></script>
+		th:src='@{/js/shop/productedit.js}' charset='utf-8'></script>
 </body>
 </html>

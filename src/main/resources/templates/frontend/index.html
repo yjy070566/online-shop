@@ -12,13 +12,13 @@
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-<link rel="stylesheet" th:href="@{css/frontend/index/index.css}">
+<link rel="stylesheet" th:href="@{/css/frontend/index/index.css}">
 </head>
 <body>
 	<div class="page-group">
 		<div class="page">
 			<header class="bar bar-nav">
-				<a class="button button-link button-nav pull-left" href="/demos/card" data-transition='slide-out'>
+				<a class="button button-link button-nav pull-left" th:href="@{/demos/card}" data-transition='slide-out'>
                       <span class="icon icon-left"></span>
                       返回
                   </a>
@@ -36,8 +36,8 @@
 				<div class="swiper-container index-banner" data-space-between='10'>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide img-wrap">
-                                <img class="banner-img" src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt="">
-                            </div>
+                             <img class="banner-img" src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt="">
+                            </div>-->
                             <div class="swiper-slide img-wrap">
                                 <img class="banner-img" src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i4/TB10rkPGVXXXXXGapXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt="">
                             </div>
@@ -48,7 +48,7 @@
 					<div class="swiper-pagination"></div>
 				</div>
 				<div class='total-shop-button'>
-					<a href="/myo2o/frontend/shoplist" external>全部商店</a>
+					<a th:href="@{/frontend/shoplist}" external>全部商店</a>
 				</div>
 				<div class="row">
 					<div class="col-50 shop-classify">
@@ -57,7 +57,7 @@
                                 <p class='shop-desc'>近期相关活动、新款上市、旅游资讯</p>
                             </div>
                             <div class='shop-classify-img-warp'>
-                                <img class='shop-img' src="static/index/display13.png">
+                                <img class='shop-img' th:src="@{static/index/display13.png}">
                             </div>
                         </div>
 				</div>
@@ -68,13 +68,13 @@
 		<div class="panel panel-right panel-reveal" id="panel-left-demo">
 			<div class="content-block">
 				<p>
-					<a href="/myo2o/frontend/myrecord" class="close-panel">消费记录</a>
+					<a th:href="@{/frontend/myrecord}" class="close-panel">消费记录</a>
 				</p>
 				<p>
-					<a href="/myo2o/frontend/mypoint" class="close-panel">我的积分</a>
+					<a th:href="@{/frontend/mypoint}" class="close-panel">我的积分</a>
 				</p>
 				<p>
-					<a href="/myo2o/frontend/pointrecord" class="close-panel">积分兑换记录</a>
+					<a th:href="@{/frontend/pointrecord}" class="close-panel">积分兑换记录</a>
 				</p>
 				<!-- Click on link with "close-panel" class will close panel -->
 			</div>
@@ -89,7 +89,7 @@
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-	<script type='text/javascript' th:src='@{js/frontend/index.js}'
+	<script type='text/javascript' th:src='@{/js/frontend/index.js}'
 		charset='utf-8'></script>
 </body>
 </html>

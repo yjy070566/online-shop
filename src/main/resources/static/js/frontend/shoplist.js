@@ -2,8 +2,8 @@ $(function() {
 	var loading = false;
 	var maxItems = 999;
 	var pageSize = 10;
-	var listUrl = '/myo2o/frontend/listshops';
-	var searchDivUrl = '/myo2o/frontend/listshopspageinfo';
+	var listUrl = '/frontend/listshops';
+	var searchDivUrl = '/frontend/listshopspageinfo';
 	var pageNum = 1;
 	var parentId = getQueryString('parentId');
 	var areaId = '';

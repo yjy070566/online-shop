@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <!-- jquery easyui -->
-<link rel="stylesheet" type="text/css"
-	href="../resources/js/superadmin/common/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css"
-	href="../resources/js/superadmin/common/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css"
+		  th:href="@{/js/superadmin/common/easyui/themes/default/easyui.css}">
+	<link rel="stylesheet" type="text/css"
+		  th:href="@{/js/superadmin/common/easyui/themes/icon.css}">
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/jquery-1.4.4.min.js}"></script>
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/easyui/js/jquery.easyui.min.js}"></script>
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/easyui/js/easyui-lang-zh_CN.js}"></script>
+	<script type="text/javascript"
+			th:src="@{/js/shop/base/commonutil.js}"></script>
+	<link rel="stylesheet"
+		  th:href="@{/css/superadmin/common/tooltip-form-style.css}">
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/errorhandle.js}"></script>
 <script type="text/javascript"
-	src="../resources/js/superadmin/common/jquery-1.4.4.min.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/common/easyui/js/jquery.easyui.min.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/common/easyui/js/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript"
-	src="../resources/js/shop/base/commonutil.js"></script>
-<link rel="stylesheet"
-	href="../resources/css/superadmin/common/tooltip-form-style.css"></link>
-<script type="text/javascript"
-	src="../resources/js/superadmin/common/errorhandle.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/main.js"></script>
+	th:src="@{/js/superadmin/main.js}"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MyO2O管理系统</title>
 </head>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -119,7 +119,7 @@
 		<div class="content-block">
 			<div class="row">
 				<div class="col-50">
-					<a href="/myo2o/shop/awardmanage"
+					<a th:href="@{/shop/awardmanage}"
 						class="button button-big button-fill button-danger" id="back">返回奖品管理</a>
 				</div>
 				<div class="col-50">
@@ -138,8 +138,8 @@
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/common/commonutil.js' charset='utf-8'></script>
-	<script type='text/javascript' src='../resources/js/shop/awardedit.js'
+			th:src='@{/js/common/commonutil.js}' charset='utf-8'></script>
+	<script type='text/javascript' th:src='@{/js/shop/awardedit.js}'
 		charset='utf-8'></script>
 </body>
 </html>

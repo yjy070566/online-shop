@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +8,24 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="stylesheet" type="text/css"
-	href="../resources/js/superadmin/common/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css"
-	href="../resources/js/superadmin/common/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css"
+		  th:href="@{/js/superadmin/common/easyui/themes/default/easyui.css}">
+	<link rel="stylesheet" type="text/css"
+		  th:href="@{/js/superadmin/common/easyui/themes/icon.css}">
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/jquery-1.4.4.min.js}"></script>
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/easyui/js/jquery.easyui.min.js}"></script>
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/easyui/js/easyui-lang-zh_CN.js}"></script>
+	<script type="text/javascript"
+			th:src="@{/js/shop/base/commonutil.js}"></script>
+	<link rel="stylesheet"
+		  th:href="@{/css/superadmin/common/tooltip-form-style.css}">
+	<script type="text/javascript"
+			th:src="@{/js/superadmin/common/errorhandle.js}"></script>
 <script type="text/javascript"
-	src="../resources/js/superadmin/common/jquery-1.4.4.min.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/common/easyui/js/jquery.easyui.min.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/common/easyui/js/easyui-lang-zh_CN.js"></script>
-<link rel="stylesheet"
-	href="../resources/css/superadmin/common/tooltip-form-style.css"></link>
-<script type="text/javascript"
-	src="../resources/js/shop/base/commonutil.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/common/errorhandle.js"></script>
-<script type="text/javascript"
-	src="../resources/js/superadmin/areamanage.js" charset="utf-8"></script>
+	th:src="@{/js/superadmin/areamanage.js}" charset="utf-8"></script>
 </head>
 
 <body>
@@ -78,14 +78,14 @@
 		style="padding: 5px; width: 500px; height: 300px;">
 		<h5 id="areaManagementEdit_message" style="color: red;"></h5>
 		<div class="ToolTip_Form" id="table_areaManagementEdit">
-			<input type="hidden" id="areaManagementEdit_areaId"></input>
+			<input type="hidden" id="areaManagementEdit_areaId">
 			<ul>
 				<li><label>区域名：</label> <input type="text"
 					class="easyui-validatebox" id="areaManagementEdit_areaName"
-					maxlength="20" required="true"></input></li>
+					maxlength="20" required="true"></li>
 				<li><label>优先级：</label> <input type="text"
 					class="easyui-numberbox" id="areaManagementEdit_priority"
-					maxlength="5" required="true" style="resize: none; width: 60px"></input>
+					maxlength="5" required="true" style="resize: none; width: 60px">
 					<font color="red">最多五位,必须为数字 </font></li>
 				<li><label>区域描述：</label> <textarea rows="5" cols="20"
 						id="areaManagementEdit_areaDesc"

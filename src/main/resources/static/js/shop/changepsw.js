@@ -1,5 +1,5 @@
 $(function() {
-	var url = '/myo2o/shop/changelocalpwd';
+	var url = '/shop/changelocalpwd';
 	$('#submit').click(function() {
 		var userName = $('#userName').val();
 		var password = $('#password').val();

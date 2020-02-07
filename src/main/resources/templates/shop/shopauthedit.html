@@ -12,7 +12,7 @@
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-<link rel="stylesheet" href="../resources/css/shop/shopauthmanage.css">
+<link rel="stylesheet" th:href="@{/css/shop/shopauthmanage.css}">
 </head>
 <body>
 	<header class="bar bar-nav">
@@ -59,7 +59,7 @@
 								class="form-control in" placeholder="验证码" />
 							<div class="item-input">
 								<img id="captcha_img" alt="点击更换" title="点击更换"
-									onclick="changeVerifyCode(this)" src="../Kaptcha" />
+									onclick="changeVerifyCode(this)" th:src="@{/Kaptcha}" />
 							</div>
 						</div>
 					</div>
@@ -89,8 +89,8 @@
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/common/commonutil.js' charset='utf-8'></script>
+		th:src='@{/js/common/commonutil.js}' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/shop/shopauthedit.js' charset='utf-8'></script>
+		th:src='@{/js/shop/shopauthedit.js}' charset='utf-8'></script>
 </body>
 </html>

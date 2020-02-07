@@ -1,5 +1,5 @@
 $(function() {
-	var bindUrl = '/myo2o/frontend/bindlocalauth';
+	var bindUrl = '/frontend/bindlocalauth';
 
 	$('#submit').click(function() {
 		var userName = $('#username').val();

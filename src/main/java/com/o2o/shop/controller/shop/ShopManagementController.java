@@ -13,7 +13,6 @@ import com.o2o.shop.util.CodeUtils;
 import com.o2o.shop.util.HttpServletRequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -113,9 +112,6 @@ public class ShopManagementController {
         List<Area> areaList = new ArrayList<Area>();
         try {
             shopCategoryList = shopCategoryService.getAllSecondLevelShopCategory();
-            for(int i=0;i<shopCategoryList.size();i++){
-                System.out.println(shopCategoryList.get(i).getShopCategoryName());
-            }
             areaList = areaService.getAreaList();
         } catch (IOException e) {
             modelMap.put("success", false);

@@ -116,7 +116,7 @@
 								class="form-control in" placeholder="验证码" />
 							<div class="item-input">
 								<img id="captcha_img" alt="点击更换" title="点击更换"
-									onclick="changeVerifyCode(this)" src="../Kaptcha" />
+									onclick="changeVerifyCode(this)" th:src="@{/Kaptcha}" />
 							</div>
 						</div>
 					</div>
@@ -145,8 +145,8 @@
 	<script type='text/javascript'
 		src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/common/commonutil.js' charset='utf-8'></script>
-	<script type='text/javascript' src='../resources/js/shop/register.js'
+		th:src='@{/js/common/commonutil.js}' charset='utf-8'></script>
+	<script type='text/javascript' th:src='@{/js/shop/register.js}'
 		charset='utf-8'></script>
 </body>
 </html>
